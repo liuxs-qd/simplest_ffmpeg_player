@@ -51,6 +51,12 @@ extern "C"
 #endif
 #endif
 
+FILE _iob[] = { *stdin, *stdout, *stderr };
+
+extern"C" FILE * __cdecl __iob_func(void)
+{
+	return _iob;
+}
 //Output YUV420P data as a file 
 #define OUTPUT_YUV420P 0
 
